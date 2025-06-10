@@ -1,0 +1,123 @@
+.customer-landing-root {
+  background: #181818;
+  color: #fff;
+  min-height: 100vh;
+  font-family: 'Segoe UI', Arial, sans-serif;
+}
+.customer-landing-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 24px 40px 0 40px;
+  background: #111;
+}
+.landing-logo {
+  height: 60px;
+}
+.landing-auth-btns {
+  display: flex;
+  gap: 16px;
+}
+.landing-btn {
+  background: #003087;
+  color: #fff;
+  border: none;
+  border-radius: 22px;
+  padding: 8px 22px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.18s;
+}
+.landing-btn:hover {
+  background: #0050c1;
+}
+.landing-hero {
+  text-align: center;
+  padding: 40px 0 20px 0;
+  background: #222;
+}
+.landing-products {
+  padding: 32px 40px;
+}
+.landing-category {
+  margin-bottom: 36px;
+}
+.landing-product-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+}
+.landing-product-card {
+  background: #222;
+  border-radius: 18px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.12);
+  padding: 18px;
+  width: 220px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.landing-product-card img {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 12px;
+  margin-bottom: 10px;
+}
+.landing-product-info {
+  text-align: center;
+  margin-bottom: 8px;
+}
+.landing-product-name {
+  font-weight: 700;
+  font-size: 1.1rem;
+  margin-bottom: 2px;
+}
+.landing-product-price {
+  font-size: 1rem;
+  color: #ffc107;
+  margin-bottom: 6px;
+}
+.customer-landing-footer {
+  text-align: center;
+  padding: 24px 0 12px 0;
+  background: #111;
+  color: #aaa;
+  margin-top: 40px;
+}
+.auth-form-root {
+  max-width: 400px;
+  margin: 60px auto;
+  background: #222;
+  padding: 32px 24px;
+  border-radius: 16px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.12);
+}
+.auth-form input {
+  width: 100%;
+  margin-bottom: 14px;
+  padding: 10px;
+  border-radius: 8px;
+  border: none;
+  font-size: 1rem;
+}
+.auth-form button {
+  width: 100%;
+  background: #003087;
+  color: #fff;
+  border: none;
+  border-radius: 22px;
+  padding: 10px 0;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  margin-bottom: 8px;
+}
+.auth-form button:hover {
+  background: #0050c1;
+}
+.auth-error {
+  color: #ff5252;
+  margin-top: 8px;
+}

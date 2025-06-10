@@ -1,0 +1,316 @@
+.zettle-root {
+  display: flex;
+  min-height: 100vh;
+  background: #000;
+  font-family: 'Segoe UI', Arial, sans-serif;
+}
+
+.zettle-products {
+  flex: 2.5;
+  background: #f6f7fa;
+  padding: 32px 24px 32px 48px;
+  min-width: 0;
+  overflow-y: auto;
+}
+
+.zettle-header {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 24px;
+  color: #222;
+  letter-spacing: 1px;
+}
+
+.zettle-category {
+  margin-bottom: 32px;
+}
+
+.zettle-category-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #444;
+  margin-bottom: 12px;
+  margin-top: 8px;
+}
+
+.zettle-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  gap: 18px;
+}
+
+.zettle-product-card {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  padding: 16px 8px 12px 8px;
+  text-align: center;
+  cursor: pointer;
+  transition: box-shadow 0.2s, transform 0.2s;
+  border: 1px solid #eaeaea;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.zettle-product-card:hover {
+  box-shadow: 0 4px 16px rgba(0,0,0,0.10);
+  transform: translateY(-2px) scale(1.03);
+}
+
+.zettle-product-img {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  background: #f2f2f2;
+}
+
+.zettle-product-name {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #222;
+  margin-bottom: 2px;
+}
+
+.zettle-product-price {
+  font-size: 0.95rem;
+  color: #555;
+}
+
+.zettle-cart {
+  flex: 1.2;
+  background: #fff;
+  min-width: 320px;
+  max-width: 400px;
+  padding: 36px 32px 32px 32px;
+  box-shadow: -2px 0 16px rgba(0,0,0,0.08);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.zettle-cart-title {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #222;
+  margin-bottom: 18px;
+}
+
+.zettle-cart-list {
+  flex: 1;
+  margin-bottom: 18px;
+}
+
+.zettle-cart-empty {
+  color: #aaa;
+  text-align: center;
+  margin: 32px 0;
+}
+
+.zettle-cart-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 0;
+  border-bottom: 1px solid #f0f0f0;
+  font-size: 1rem;
+}
+
+.zettle-cart-itemname {
+  flex: 2;
+  color: #222;
+  font-weight: 500;
+}
+
+.zettle-cart-itemprice {
+  flex: 1;
+  text-align: right;
+  color: #222;
+}
+
+.zettle-cart-remove {
+  background: none;
+  border: none;
+  color: #d32f2f;
+  font-size: 1.3rem;
+  font-weight: bold;
+  cursor: pointer;
+  margin-left: 10px;
+  transition: color 0.2s;
+}
+.zettle-cart-remove:hover {
+  color: #b71c1c;
+}
+
+.zettle-cart-total-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 1.15rem;
+  font-weight: 600;
+  margin: 18px 0 12px 0;
+  color: #222;
+}
+
+.zettle-cart-total {
+  color: #0a3;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.zettle-cart-pay,
+.zettle-cart-pay-alt {
+  width: 100%;
+  padding: 12px 0;
+  margin-bottom: 12px;
+  border-radius: 8px;
+  border: 2px solid #003087;
+  background: #003087;
+  color: #fff;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+  letter-spacing: 0.5px;
+}
+
+.zettle-cart-pay-alt {
+  background: #fff;
+  color: #003087;
+  border: 2px solid #003087;
+  margin-bottom: 0;
+}
+
+.zettle-cart-pay:disabled,
+.zettle-cart-pay-alt:disabled {
+  background: #eee;
+  color: #bbb;
+  border-color: #eee;
+  cursor: not-allowed;
+}
+
+.zettle-cart-pay:hover:not(:disabled) {
+  background: #0050c1;
+}
+
+.zettle-cart-pay-alt:hover:not(:disabled) {
+  background: #003087;
+  color: #fff;
+}
+
+/* Print Styles */
+.print-area,
+.receipt-print {
+  display: none;
+}
+@media print {
+  body * {
+    visibility: hidden !important;
+  }
+  .print-area,
+  .print-area * {
+    visibility: visible !important;
+  }
+  .receipt-print {
+    display: block !important;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 380px !important; /* ~2 inch at 203dpi */
+    min-width: 0 !important;
+    max-width: 380px !important;
+    background: #fff !important;
+    color: #000 !important;
+    z-index: 9999;
+    padding: 0 !important;
+    margin: 0 auto !important;
+    font-family: monospace !important;
+    font-size: 11px !important;
+    box-sizing: border-box;
+  }
+  @page {
+    size: 48mm auto;
+    margin: 0;
+  }
+}
+/* Sticky total and buttons at bottom of cart */
+.zettle-cart-sticky {
+  position: sticky;
+  bottom: 0;
+  background: #fff;
+  padding-top: 12px;
+  padding-bottom: 16px;
+  box-shadow: 0 -2px 12px rgba(0,0,0,0.04);
+  z-index: 10;
+}
+.modal-overlay {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0,0,0,0.35);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.modal-content {
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 2px 24px rgba(0,0,0,0.18);
+  padding: 32px 24px;
+  max-width: 400px;
+  width: 95vw;
+  position: relative;
+}
+.cart-qty-btns {
+  display: flex;
+  align-items: center;
+  background: #fff6e0;
+  border-radius: 22px;
+  padding: 2px 12px;
+  gap: 8px;
+  min-width: 90px;
+  justify-content: center;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+}
+
+.cart-btn {
+  border: none;
+  outline: none;
+  background: none;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background 0.15s;
+  font-size: 1.2rem;
+  padding: 0;
+}
+
+.cart-btn-remove {
+  background: #ffc107;
+  color: #fff;
+}
+.cart-btn-remove:hover {
+  background: #e0a800;
+}
+
+.cart-btn-add {
+  background: #003087;
+  color: #fff;
+}
+.cart-btn-add:hover {
+  background: #0050c1;
+}
+
+.cart-qty {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #222;
+  min-width: 18px;
+  text-align: center;
+  margin: 0 2px;
+}
